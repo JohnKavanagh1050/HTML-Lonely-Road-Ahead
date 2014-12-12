@@ -3,8 +3,8 @@ function SceneManager()
 	this.sceneArray = [];
 
 	this.sceneArray.push( new OpeningScene() );
-	this.sceneArray.push( new MiddleScene() );
-	this.sceneArray.push( new EndScene() );
+	this.sceneArray.push( new MenuScene() );
+	this.sceneArray.push( new GameScene() );
 	this.clicked = false;
 	this.i = 0;
 }
@@ -25,15 +25,15 @@ SceneManager.prototype.goToScene = function(title1)
 {
 	if (title1 == "OpeningScene")
 	{
-		this.i =0;
+		this.i = 0;
 	} 
-	if (title1 == "MiddleScene")
+	if (title1 == "MenuScene")
 	{
-		this.i=1;
+		this.i = 1;
 	}
-	if (title1 == "EndScene")
+	if (title1 == "GameScene")
 	{
-		this.i=2;
+		this.i = 2;
 	}
 }
 

@@ -33,19 +33,35 @@ function move(e)
 	{
 		sceneM.goToScene("OpeningScene")
 	}
-	if(e.keyCode == 66)
+	if(e.keyCode == 13)
 	{
-		sceneM.goToScene("MiddleScene");
+		sceneM.goToScene("MenuScene");
 	}
 	if(e.keyCode == 67)
 	{
-		sceneM.goToScene("EndScene");
+		sceneM.goToScene("GameScene");
 	}
 }
 
 Game.prototype.draw = function()
 {
 	sceneM.getScene().draw();
+
+	for(var i = 0; i < 100; i++) {
+		var r = Math.random()*255;
+		var g = Math.random()*255;
+		var b = Math.random()*255;
+
+		var x = Math.random() * this.screenWidth;
+		var y = Math.random() * this.screenHeight;
+
+		var width = Math.random() * 100;
+		var height = Math.random() * 100;
+
+		this.ctx.fillStyle = rgb(r,g,b);
+
+		this.ctx.fillRect(x, y, width, height);
+	}
 }
 
 function main()
@@ -56,10 +72,4 @@ function main()
 
 	game.initCanvas();
 	game.gameLoop();
-	//document.addEventListener("keydown", move);
-	// game.canvas.addEventListener('mousedown',function()
-	// 	{
-	// 		sceneM.goToNextScene();
-	// 	}
-	// );
 }
